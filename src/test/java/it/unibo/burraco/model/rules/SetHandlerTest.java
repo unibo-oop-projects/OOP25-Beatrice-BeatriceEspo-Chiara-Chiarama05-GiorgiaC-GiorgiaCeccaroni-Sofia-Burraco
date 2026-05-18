@@ -33,7 +33,7 @@ class SetHandlerTest {
         );
         assertFalse(handler.isValid(set));
     }
-    
+
     @Test
     void testSetWithTwoWildcardsIsInvalid() {
         final List<Card> set = List.of(

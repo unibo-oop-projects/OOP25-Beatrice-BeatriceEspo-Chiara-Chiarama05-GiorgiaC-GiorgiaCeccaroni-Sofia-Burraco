@@ -44,7 +44,7 @@ class ScoreControllerTest {
 
     @Test
     void testSetOnNewRoundForwarding() {
-        Runnable dummyAction = () -> { };
+        final Runnable dummyAction = () -> { };
         scoreController.setOnNewRound(dummyAction);
         verify(roundEndHandler).setOnNewRound(dummyAction);
     }

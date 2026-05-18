@@ -15,9 +15,6 @@ import org.junit.jupiter.api.Test;
 class DeckTest {
     private static final int FULL_DECK_SIZE = 108;
     private static final int JOLLY_COUNT = 4;
-    private static final String JOLLY_VALUE = "Jolly";
-    private static final String[] SEEDS = {"♠", "♥", "♣", "♦"};
-    private static final String[] VALUES = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 
     private DeckImpl deck;
 
@@ -38,21 +35,22 @@ class DeckTest {
 
     @Test
     void testDeckComposition() {
-        final List<Card> cards = deck.getCards();
+    final List<Card> cards = deck.getCards();
 
-        final long jollyCount = cards.stream()
-                .filter(c -> JOLLY_VALUE.equals(c.getValue()))
-                .count();
-        assertEquals(JOLLY_COUNT, jollyCount);
+    final long jollyCount = cards.stream()
+            .filter(c -> c.getValue() == CardValue.JOLLY)
+            .count();
+    assertEquals(JOLLY_COUNT, jollyCount);
 
-        for (final String seed : SEEDS) {
-            for (final String value : VALUES) {
-                final String s = seed;
-                final String v = value;
-                final long count = cards.stream()
-                        .filter(c -> s.equals(c.getSeed()) && v.equals(c.getValue()))
-                        .count();
-                assertEquals(2, count, "Expected 2 copies of " + value + seed);
+    for (final Seed seed : new Seed[]{Seed.SPADES, Seed.HEARTS, Seed.CLUBS, Seed.DIAMONDS}) {
+        for (final CardValue value : CardValue.values()) {
+            if (value == CardValue.JOLLY) {
+                continue;
+            }
+            final long count = cards.stream()
+                    .filter(c -> c.getSeed() == seed && c.getValue() == value)
+                    .count();
+            assertEquals(2, count, "Expected 2 copies of " + value + seed);
             }
         }
     }

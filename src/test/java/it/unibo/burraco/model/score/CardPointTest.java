@@ -42,7 +42,7 @@ class CardPointTest {
     void testHighCardsWorth10() {
         final CardValue[] highValues = {
             CardValue.KING, CardValue.QUEEN, CardValue.JACK, 
-            CardValue.TEN, CardValue.NINE, CardValue.EIGHT
+            CardValue.TEN, CardValue.NINE, CardValue.EIGHT,
         };
         for (final CardValue value : highValues) {
             final Card card = new CardImpl(Seed.HEARTS, value);
@@ -53,7 +53,7 @@ class CardPointTest {
     @Test
     void testLowCardsWorth5() {
         final CardValue[] lowValues = {
-            CardValue.SEVEN, CardValue.SIX, CardValue.FIVE, CardValue.FOUR, CardValue.THREE
+            CardValue.SEVEN, CardValue.SIX, CardValue.FIVE, CardValue.FOUR, CardValue.THREE,
         };
         for (final CardValue value : lowValues) {
             final Card card = new CardImpl(Seed.HEARTS, value);
@@ -66,7 +66,7 @@ class CardPointTest {
         final CardValue[] values = {
             CardValue.ACE, CardValue.TWO, CardValue.THREE, CardValue.FOUR, CardValue.FIVE, 
             CardValue.SIX, CardValue.SEVEN, CardValue.EIGHT, CardValue.NINE, CardValue.TEN, 
-            CardValue.JACK, CardValue.QUEEN, CardValue.KING
+            CardValue.JACK, CardValue.QUEEN, CardValue.KING,
         };
         final int[] expected = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 

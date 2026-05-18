@@ -33,7 +33,7 @@ class StraightUtilsTest {
         );
         assertTrue(utils.isValidStraight(straight));
     }
-    
+
     @Test
     void testDifferentSeedsInvalid() {
         final List<Card> straight = List.of(
