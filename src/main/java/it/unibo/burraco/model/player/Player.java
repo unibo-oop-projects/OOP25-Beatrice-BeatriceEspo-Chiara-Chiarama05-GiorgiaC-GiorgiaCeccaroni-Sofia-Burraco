@@ -15,6 +15,12 @@ public interface Player {
      */
     String getName();
 
+    /**
+     * Replaces an existing combination with an updated one.
+     *
+     * @param oldCombo the combination to replace
+     * @param newCombo the new combination to put in its place
+     */
     void updateCombination(List<Card> oldCombo, List<Card> newCombo);
 
     /**

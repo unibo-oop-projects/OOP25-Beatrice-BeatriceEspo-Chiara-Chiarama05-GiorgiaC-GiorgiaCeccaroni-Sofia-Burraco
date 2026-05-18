@@ -153,6 +153,8 @@ public final class GameLoopController implements GameController {
 
     /**
      * Waits for the view to signal a player action via the injected future.
+     *
+     * @return the ViewAction produced by the player's interaction with the view
      */
     private ViewAction waitForAction() {
         final CompletableFuture<ViewAction> future = new CompletableFuture<>();
