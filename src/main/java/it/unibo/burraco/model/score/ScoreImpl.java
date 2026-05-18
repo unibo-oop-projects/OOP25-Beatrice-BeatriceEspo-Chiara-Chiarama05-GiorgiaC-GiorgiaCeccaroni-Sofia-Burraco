@@ -77,14 +77,8 @@ public final class ScoreImpl implements Score {
                 .filter(c -> c.getValue() == CardValue.TWO)
                 .collect(Collectors.toList());
 
-        if (twos.isEmpty()) {
-            return true;
-        }
-        if (twos.size() > 1) {
-            return false;
-        }
-
-        return isTwoInNaturalPosition(twos.get(0), combination);
+        return twos.isEmpty() 
+                || twos.size() == 1 && this.isTwoInNaturalPosition(twos.get(0), combination);
     }
 
     /**
@@ -95,16 +89,19 @@ public final class ScoreImpl implements Score {
      * @return true if the two is in natural position, false otherwise
      */
     private boolean isTwoInNaturalPosition(final Card two, final List<Card> combination) {
-    final Seed suit = two.getSeed();
-    return combination.stream().allMatch(c -> c.getSeed() == suit)
-            && isConsecutiveRankSequence(combination);
-    }
+        final Seed suit = two.getSeed();
 
-    private boolean isConsecutiveRankSequence(final List<Card> combination) {
+        final boolean sameSuit = combination.stream()
+                .allMatch(c -> c.getSeed() == suit);
+        if (!sameSuit) {
+            return false;
+        }
+
         final List<Integer> ranks = combination.stream()
                 .map(CardPoint::toInt)
                 .sorted()
                 .collect(Collectors.toList());
+
         for (int i = 1; i < ranks.size(); i++) {
             if (ranks.get(i) != ranks.get(i - 1) + 1) {
                 return false;
