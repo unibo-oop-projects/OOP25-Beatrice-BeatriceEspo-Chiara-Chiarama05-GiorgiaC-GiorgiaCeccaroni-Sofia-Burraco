@@ -36,8 +36,7 @@ public record ScoreSnapshot(
         boolean isWinner,
         List<Card> finalHand
 ) {
-
-/**
+    /**
      * Compact constructor that defensively copies the finalHand list
      * to guarantee true immutability of this record.
      */
