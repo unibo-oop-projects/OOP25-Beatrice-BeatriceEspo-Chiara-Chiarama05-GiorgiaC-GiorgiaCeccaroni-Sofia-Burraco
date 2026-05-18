@@ -35,4 +35,13 @@ public record ScoreSnapshot(
         int matchTotal,
         boolean isWinner,
         List<Card> finalHand
-) { }
+) {
+
+/**
+     * Compact constructor that defensively copies the finalHand list
+     * to guarantee true immutability of this record.
+     */
+    public ScoreSnapshot {
+        finalHand = List.copyOf(finalHand);
+    }
+}

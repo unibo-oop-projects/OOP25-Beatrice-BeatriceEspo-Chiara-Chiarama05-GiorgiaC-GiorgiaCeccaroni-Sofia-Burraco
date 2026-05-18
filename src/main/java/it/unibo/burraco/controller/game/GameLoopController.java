@@ -119,8 +119,7 @@ public final class GameLoopController implements GameController {
                 final boolean isDiscard = move.getType() == Move.Type.DISCARD;
                 potManager.handlePot(isDiscard);
             }
-            case ROUND_WON -> sound.playRoundEndSound();
-            case DECK_EMPTY -> sound.playRoundEndSound();
+            case ROUND_WON, DECK_EMPTY -> sound.playRoundEndSound();
             default -> { }
         }
         view.refresh(buildGameState());
