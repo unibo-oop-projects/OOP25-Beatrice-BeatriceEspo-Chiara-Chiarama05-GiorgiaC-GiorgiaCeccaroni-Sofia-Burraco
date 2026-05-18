@@ -51,6 +51,7 @@ public final class PlayerImpl implements Player {
         }
     }
 
+    @SuppressWarnings("PMD.CompareObjectsWithEquals")
     private boolean sameCardReferences(final List<Card> a, final List<Card> b) {
         if (a.size() != b.size()) {
             return false;
@@ -101,6 +102,7 @@ public final class PlayerImpl implements Player {
     }
 
     @Override
+    @SuppressWarnings("PMD.CompareObjectsWithEquals")
     public void removeCardHand(final Card c) {
         for (int i = 0; i < this.hand.size(); i++) {
             if (this.hand.get(i) == c) {
