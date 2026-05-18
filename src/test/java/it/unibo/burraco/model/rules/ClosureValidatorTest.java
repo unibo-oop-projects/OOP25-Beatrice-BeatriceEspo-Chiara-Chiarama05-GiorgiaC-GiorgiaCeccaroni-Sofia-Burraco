@@ -18,7 +18,7 @@ class ClosureValidatorTest {
         final ClosureValidator validator = new ClosureValidator();
         final Player p = mock(Player.class);
         when(p.getHand()).thenReturn(List.of(new CardImpl(Seed.HEARTS, CardValue.ACE)));
-        
+
         assertEquals(ClosureState.OK, validator.evaluate(p));
     }
 }

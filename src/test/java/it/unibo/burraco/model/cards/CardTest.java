@@ -19,7 +19,7 @@ class CardTest {
     void testWildcardStatus() {
         final CardImpl card = new CardImpl(Seed.HEARTS, CardValue.TWO);
         assertFalse(card.isUsedAsWildcard(), "Default status should be false");
-        
+
         card.setAsWildcard(true);
         assertTrue(card.isUsedAsWildcard(), "Status should be true after set");
     }
@@ -28,7 +28,7 @@ class CardTest {
     void testToString() {
         final CardImpl card = new CardImpl(Seed.SPADES, CardValue.ACE);
         assertEquals("A♠", card.toString());
-        
+
         final CardImpl jolly = new CardImpl(Seed.JOKER, CardValue.JOLLY);
         assertEquals("Jolly♕", jolly.toString());
     }

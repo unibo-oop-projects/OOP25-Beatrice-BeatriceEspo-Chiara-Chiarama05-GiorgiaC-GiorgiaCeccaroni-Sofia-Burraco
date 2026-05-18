@@ -21,7 +21,7 @@ import java.util.Collections;
 class PotManagerTest {
 
     private static final String PLAYER_NAME = "Sofia";
-    
+
     private Turn model;
     private BurracoView view;
     private Player player;
