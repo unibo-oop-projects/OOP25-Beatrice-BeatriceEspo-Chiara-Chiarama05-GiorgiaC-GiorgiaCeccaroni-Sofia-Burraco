@@ -164,9 +164,8 @@ public final class GameModelImpl implements GameModel {
                 }
                 return MoveResult.ok();
             }
-            default:
-                return MoveResult.error(MoveResult.Status.INVALID_MOVE);
         }
+        return MoveResult.error(MoveResult.Status.INVALID_MOVE);
     }
 
     /**

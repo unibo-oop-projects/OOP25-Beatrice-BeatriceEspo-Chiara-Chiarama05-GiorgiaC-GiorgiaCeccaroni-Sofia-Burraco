@@ -47,7 +47,6 @@ public final class MoveValidator {
             case PUT_COMBINATION -> validatePutCombination(move, current, drawn);
             case ATTACH -> validateAttach(move, current, drawn);
             case DISCARD -> validateDiscard(move, drawn);
-            default -> MoveResult.error(MoveResult.Status.INVALID_MOVE);
         };
     }
 
