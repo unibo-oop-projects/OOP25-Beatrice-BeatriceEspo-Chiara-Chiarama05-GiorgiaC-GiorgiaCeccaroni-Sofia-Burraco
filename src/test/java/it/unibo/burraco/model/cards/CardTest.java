@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 class CardTest {
 
+    private static final int KING_VALUE = 13;
+
     @Test
     void testConstructorAndGetters() {
         final CardImpl card = new CardImpl(Seed.HEARTS, CardValue.ACE);
@@ -37,7 +39,7 @@ class CardTest {
     void testGetNumericalValue() {
         assertEquals(1, new CardImpl(Seed.HEARTS, CardValue.ACE).getNumericalValue());
         assertEquals(2, new CardImpl(Seed.HEARTS, CardValue.TWO).getNumericalValue());
-        assertEquals(13, new CardImpl(Seed.HEARTS, CardValue.KING).getNumericalValue());
+        assertEquals(KING_VALUE, new CardImpl(Seed.HEARTS, CardValue.KING).getNumericalValue());
         assertEquals(0, new CardImpl(Seed.JOKER, CardValue.JOLLY).getNumericalValue());
     }
 }

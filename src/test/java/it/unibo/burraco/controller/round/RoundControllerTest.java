@@ -1,6 +1,7 @@
 package it.unibo.burraco.controller.round;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.ArgumentMatchers.any;
@@ -58,11 +59,12 @@ class RoundControllerTest {
     @Test
     void testProcessNewRoundFullSequence() {
         this.controller.processNewRound();
-        verify(this.resetManager).resetRound(eq(this.p1), eq(this.p2), any(), any());
-        verify(this.model).resetForNewRound();
-        verify(this.tableView).startNewRound();
-        verify(this.distController).distribute(eq(this.p1), eq(this.p2), any(), any());
-        verify(this.distView).refresh(any(), any());
-        verify(this.tableView).repaintTable();
+        this.controller.processNewRound();
+        verify(this.resetManager, times(1)).resetRound(eq(this.p1), eq(this.p2), any(), any());
+        verify(this.model, times(1)).resetForNewRound();
+        verify(this.tableView, times(2)).startNewRound();
+        verify(this.distController, times(2)).distribute(eq(this.p1), eq(this.p2), any(), any());
+        verify(this.distView, times(2)).refresh(any(), any());
+        verify(this.tableView, times(2)).repaintTable();
     }
 }
