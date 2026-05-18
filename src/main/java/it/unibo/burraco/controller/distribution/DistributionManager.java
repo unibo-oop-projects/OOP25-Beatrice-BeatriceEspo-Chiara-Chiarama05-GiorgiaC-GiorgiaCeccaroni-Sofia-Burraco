@@ -21,6 +21,7 @@ public interface DistributionManager {
      *                         will be depleted during distribution
      * @param modelDiscardPile the discard pile to be initialized with the first card
      */
+    @SuppressWarnings("PMD.ImplicitFunctionalInterface")
     void distributeInitialCards(Player player1,
                                 Player player2,
                                 Deck deck,

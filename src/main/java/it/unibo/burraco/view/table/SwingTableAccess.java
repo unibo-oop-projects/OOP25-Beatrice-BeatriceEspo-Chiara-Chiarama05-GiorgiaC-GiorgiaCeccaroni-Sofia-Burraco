@@ -11,5 +11,6 @@ public interface SwingTableAccess {
     /**
      * @return the main application JFrame, needed by ScoreViewImpl for positioning.
      */
+    @SuppressWarnings("PMD.ImplicitFunctionalInterface")
     JFrame getFrame();
 }

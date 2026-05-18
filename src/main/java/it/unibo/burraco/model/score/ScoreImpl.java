@@ -95,19 +95,16 @@ public final class ScoreImpl implements Score {
      * @return true if the two is in natural position, false otherwise
      */
     private boolean isTwoInNaturalPosition(final Card two, final List<Card> combination) {
-        final Seed suit = two.getSeed();
+    final Seed suit = two.getSeed();
+    return combination.stream().allMatch(c -> c.getSeed() == suit)
+            && isConsecutiveRankSequence(combination);
+    }
 
-        final boolean sameSuit = combination.stream()
-                .allMatch(c -> c.getSeed() == suit);
-        if (!sameSuit) {
-            return false;
-        }
-
+    private boolean isConsecutiveRankSequence(final List<Card> combination) {
         final List<Integer> ranks = combination.stream()
                 .map(CardPoint::toInt)
                 .sorted()
                 .collect(Collectors.toList());
-
         for (int i = 1; i < ranks.size(); i++) {
             if (ranks.get(i) != ranks.get(i - 1) + 1) {
                 return false;
