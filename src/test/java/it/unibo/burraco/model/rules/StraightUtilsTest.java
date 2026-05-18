@@ -12,7 +12,7 @@ import it.unibo.burraco.model.cards.Seed;
 
 class StraightUtilsTest {
 
-    private final StraightUtils utils = new StraightUtils();
+    private final StraightValidator utils = new StraightValidator();
 
     @Test
     void testSimpleStraight() {

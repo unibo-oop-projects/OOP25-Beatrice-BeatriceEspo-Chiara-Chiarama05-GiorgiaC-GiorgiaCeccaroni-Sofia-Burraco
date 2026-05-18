@@ -1,4 +1,4 @@
-package it.unibo.burraco.controller.display;
+package it.unibo.burraco.controller.dto;
 
 import it.unibo.burraco.model.cards.Card;
 import java.util.List;

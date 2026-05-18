@@ -14,7 +14,7 @@ import it.unibo.burraco.model.rules.ClosureValidator;
 import it.unibo.burraco.model.rules.CombinationValidator;
 import it.unibo.burraco.model.rules.MoveValidator;
 import it.unibo.burraco.model.rules.SetHandler;
-import it.unibo.burraco.model.rules.StraightUtils;
+import it.unibo.burraco.model.rules.StraightValidator;
 import it.unibo.burraco.model.turn.Turn;
 import it.unibo.burraco.model.turn.TurnImpl;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public final class GameModelImpl implements GameModel {
     private final Turn turn;
     private final CombinationValidator combinationValidator = new CombinationValidator();
     private final ClosureValidator closureValidator = new ClosureValidator();
-    private final StraightUtils straightUtils = new StraightUtils();
+    private final StraightValidator straightUtils = new StraightValidator();
     private final SetHandler setHandler = new SetHandler();
     private boolean drawnThisTurn;
     private Player winner;

@@ -1,8 +1,8 @@
-package it.unibo.burraco.controller.score;
+package it.unibo.burraco.controller.dto;
  
 import it.unibo.burraco.model.cards.Card;
 import java.util.List;
- 
+
 /**
  * An immutable Data Transfer Object (DTO) representing a player's score breakdown.
  * It encapsulates all calculated values needed for display, ensuring the View 

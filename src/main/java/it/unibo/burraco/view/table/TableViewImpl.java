@@ -1,6 +1,6 @@
 package it.unibo.burraco.view.table;
 
-import it.unibo.burraco.controller.display.GameState;
+import it.unibo.burraco.controller.dto.GameState;
 import it.unibo.burraco.model.cards.Card;
 import it.unibo.burraco.view.components.attach.AttachButtonFactory;
 import it.unibo.burraco.view.table.deck.DeckView;
@@ -60,7 +60,7 @@ public final class TableViewImpl implements BurracoView, SwingTableAccess {
     private final JPanel deckPanel;
     private final String nameP1;
     private final String nameP2;
-    private final TableSetUpView initDist;
+    private final PlayersHandPanel initDist;
     private final DiscardView discardView;
     private final DeckView deckView;
     private final JButton takeDiscardBtn;
@@ -98,7 +98,7 @@ public final class TableViewImpl implements BurracoView, SwingTableAccess {
         this.deckView = new DeckView();
         this.deckPanel = new JPanel(new BorderLayout());
         this.deckPanel.setBackground(LIGHT_GREEN);
-        this.initDist = new TableSetUpView();
+        this.initDist = new PlayersHandPanel();
         this.frame.add(
                 new PlayerAreaView(buildDiscardScroll(), deckView, deckPanel, LIGHT_GREEN),
                 BorderLayout.SOUTH);
@@ -308,9 +308,9 @@ public final class TableViewImpl implements BurracoView, SwingTableAccess {
     /**
      * Returns the distribution view used during initial card dealing.
      *
-     * @return the {@link TableSetUpView} managing both players' hand panels
+     * @return the {@link PlayersHandPanel} managing both players' hand panels
      */
-    public TableSetUpView getInitDist() {
+    public PlayersHandPanel getInitDist() {
         return this.initDist;
     }
 

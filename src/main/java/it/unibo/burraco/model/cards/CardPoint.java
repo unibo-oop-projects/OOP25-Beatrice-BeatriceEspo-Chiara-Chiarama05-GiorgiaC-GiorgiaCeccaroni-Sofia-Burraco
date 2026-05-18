@@ -1,7 +1,4 @@
-package it.unibo.burraco.model.score;
-
-import it.unibo.burraco.model.cards.Card;
-import it.unibo.burraco.model.cards.CardValue;
+package it.unibo.burraco.model.cards;
 
 /**
  * Utility class to manage point values and numerical conversions

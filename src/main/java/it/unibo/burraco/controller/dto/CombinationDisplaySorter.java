@@ -1,8 +1,8 @@
-package it.unibo.burraco.controller.display;
+package it.unibo.burraco.controller.dto;
 
 import it.unibo.burraco.model.cards.Card;
 import it.unibo.burraco.model.cards.CardValue;
-import it.unibo.burraco.model.rules.StraightUtils;
+import it.unibo.burraco.model.rules.StraightValidator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +14,7 @@ import java.util.List;
  */
 public final class CombinationDisplaySorter {
 
-    private final StraightUtils straightUtils = new StraightUtils();
+    private final StraightValidator straightUtils = new StraightValidator();
 
     /**
      * Sorts a combination of cards into the correct display order.

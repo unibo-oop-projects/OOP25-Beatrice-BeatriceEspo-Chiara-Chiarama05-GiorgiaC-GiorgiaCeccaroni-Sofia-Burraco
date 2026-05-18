@@ -18,7 +18,7 @@ import it.unibo.burraco.model.cards.Seed;
  * All raw string comparisons have been replaced with
  * {@link CardValue} and {@link Seed} enum references.
  */
-public final class StraightUtils {
+public final class StraightValidator {
 
     private static final int ACE_LOW_VALUE = 1;
     private static final int ACE_HIGH_VALUE = 14;
@@ -28,7 +28,7 @@ public final class StraightUtils {
     /**
      * Default constructor for instantiation.
      */
-    public StraightUtils() {
+    public StraightValidator() {
         // Default constructor
     }
 

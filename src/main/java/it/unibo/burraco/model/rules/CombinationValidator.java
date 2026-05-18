@@ -17,14 +17,14 @@ public final class CombinationValidator {
     private static final int MIN_COMBO_SIZE = 3;
 
     private final SetHandler setHandler;
-    private final StraightUtils straightUtils;
+    private final StraightValidator straightUtils;
 
     /**
      * Constructs a new CombinationValidator and initializes its internal handlers.
      */
     public CombinationValidator() {
         this.setHandler = new SetHandler();
-        this.straightUtils = new StraightUtils();
+        this.straightUtils = new StraightValidator();
     }
 
     /**

@@ -10,7 +10,7 @@ import java.util.List;
  * keeping AttachButton fully decoupled from the rest of the view infrastructure.
  */
 public final class AttachButtonFactory {
- 
+
     private final AttachListener listener;
  
     /**

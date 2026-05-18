@@ -1,6 +1,6 @@
 package it.unibo.burraco.controller.round;
 
-import it.unibo.burraco.controller.distribution.InitialDistributionController;
+import it.unibo.burraco.controller.distribution.DistributionController;
 import it.unibo.burraco.model.GameModel;
 import it.unibo.burraco.model.player.Player;
 import it.unibo.burraco.view.table.BurracoView;
@@ -17,7 +17,7 @@ public final class RoundControllerImpl implements RoundController {
     private final BurracoView tableView;
     private final ResetManager resetManager;
     private final GameModel model;
-    private final InitialDistributionController distributionController;
+    private final DistributionController distributionController;
     private final DistributionView distributionView;
 
     private boolean isFirstRound = true;
@@ -34,7 +34,7 @@ public final class RoundControllerImpl implements RoundController {
     public RoundControllerImpl(final BurracoView tableView,
                                final ResetManager resetManager,
                                final GameModel model,
-                               final InitialDistributionController distributionController,
+                               final DistributionController distributionController,
                                final DistributionView distributionView) {
         this.tableView = tableView;
         this.resetManager = resetManager;

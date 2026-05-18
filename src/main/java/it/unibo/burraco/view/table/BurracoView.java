@@ -1,6 +1,6 @@
 package it.unibo.burraco.view.table;
 
-import it.unibo.burraco.controller.display.GameState;
+import it.unibo.burraco.controller.dto.GameState;
 import it.unibo.burraco.model.cards.Card;
 
 import java.util.List;

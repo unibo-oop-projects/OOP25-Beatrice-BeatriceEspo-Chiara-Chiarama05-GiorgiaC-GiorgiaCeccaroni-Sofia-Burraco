@@ -9,7 +9,7 @@ import it.unibo.burraco.model.player.Player;
  * It serves as an abstraction layer that delegates the distribution logic
  * to an implementation of {@link DistributionManager}.
  */
-public class InitialDistributionController {
+public class DistributionController {
 
     private final DistributionManager distManager;
 
@@ -18,7 +18,7 @@ public class InitialDistributionController {
      *
      * @param distManager the distribution logic provider to be used
      */
-    public InitialDistributionController(final DistributionManager distManager) {
+    public DistributionController(final DistributionManager distManager) {
         this.distManager = distManager;
     }
 

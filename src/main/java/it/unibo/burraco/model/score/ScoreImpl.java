@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import it.unibo.burraco.model.cards.Card;
+import it.unibo.burraco.model.cards.CardPoint;
 import it.unibo.burraco.model.cards.CardValue;
 import it.unibo.burraco.model.cards.Seed;
 import it.unibo.burraco.model.player.Player;

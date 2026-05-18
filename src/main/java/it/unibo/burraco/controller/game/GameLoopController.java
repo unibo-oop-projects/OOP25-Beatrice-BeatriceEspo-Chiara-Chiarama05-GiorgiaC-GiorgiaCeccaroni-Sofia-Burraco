@@ -1,7 +1,7 @@
 package it.unibo.burraco.controller.game;
 
-import it.unibo.burraco.controller.display.CombinationDisplaySorter;
-import it.unibo.burraco.controller.display.GameState;
+import it.unibo.burraco.controller.dto.CombinationDisplaySorter;
+import it.unibo.burraco.controller.dto.GameState;
 import it.unibo.burraco.controller.pot.PotManager;
 import it.unibo.burraco.controller.score.ScoreController;
 import it.unibo.burraco.model.GameModel;

@@ -13,7 +13,7 @@ class InitialDistributionControllerTest {
     @Test
     void testDistributeDelegation() {
         final DistributionManagerImpl mockManager = mock(DistributionManagerImpl.class);
-        final InitialDistributionController controller = new InitialDistributionController(mockManager);
+        final DistributionController controller = new DistributionController(mockManager);
         final Player p1 = mock(Player.class);
         final Player p2 = mock(Player.class);
         final Deck deck = mock(Deck.class);

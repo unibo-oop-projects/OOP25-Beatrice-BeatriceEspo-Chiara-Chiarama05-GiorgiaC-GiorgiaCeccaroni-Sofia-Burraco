@@ -1,6 +1,6 @@
 package it.unibo.burraco.view.scenes;
 
-import it.unibo.burraco.controller.score.ScoreSnapshot;
+import it.unibo.burraco.controller.dto.ScoreSnapshot;
 import it.unibo.burraco.view.table.SwingTableAccess;
 
 /**

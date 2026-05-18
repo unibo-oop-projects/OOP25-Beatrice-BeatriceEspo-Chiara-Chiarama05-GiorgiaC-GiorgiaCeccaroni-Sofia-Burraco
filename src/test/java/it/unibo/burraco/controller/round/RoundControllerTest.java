@@ -8,7 +8,7 @@ import static org.mockito.ArgumentMatchers.eq;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import it.unibo.burraco.controller.distribution.InitialDistributionController;
+import it.unibo.burraco.controller.distribution.DistributionController;
 import it.unibo.burraco.model.GameModel;
 import it.unibo.burraco.model.player.Player;
 import it.unibo.burraco.model.cards.Deck;
@@ -22,7 +22,7 @@ class RoundControllerTest {
     private GameModel model;
     private BurracoView tableView;
     private ResetManager resetManager;
-    private InitialDistributionController distController;
+    private DistributionController distController;
     private DistributionView distView;
     private Player p1;
     private Player p2;
@@ -33,7 +33,7 @@ class RoundControllerTest {
         this.tableView = mock(BurracoView.class);
         this.resetManager = mock(ResetManager.class);
         this.model = mock(GameModel.class);
-        this.distController = mock(InitialDistributionController.class);
+        this.distController = mock(DistributionController.class);
         this.distView = mock(DistributionView.class);
         this.p1 = mock(Player.class);
         this.p2 = mock(Player.class);

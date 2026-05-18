@@ -1,6 +1,6 @@
 package it.unibo.burraco.controller.round;
- 
-import it.unibo.burraco.controller.score.ScoreSnapshot;
+
+import it.unibo.burraco.controller.dto.ScoreSnapshot;
 import it.unibo.burraco.model.player.Player;
 import it.unibo.burraco.model.score.Score;
 import it.unibo.burraco.view.components.sound.SoundView;

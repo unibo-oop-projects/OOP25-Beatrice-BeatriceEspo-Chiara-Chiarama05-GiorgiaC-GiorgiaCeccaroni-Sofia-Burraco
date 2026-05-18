@@ -12,7 +12,7 @@ import java.util.List;
  * Concrete implementation of {@link DistributionView} responsible for initializing
  * and refreshing the components involved in the initial card-distribution phase.
  */
-public final class TableSetUpView implements DistributionView {
+public final class PlayersHandPanel implements DistributionView {
  
     private final HandView handPlayer1;
     private final HandView handPlayer2;
@@ -21,7 +21,7 @@ public final class TableSetUpView implements DistributionView {
      * Constructs a new TableSetUpView and initializes the hand sub-views
      * with their respective selection managers.
      */
-    public TableSetUpView() {
+    public PlayersHandPanel() {
         this.handPlayer1 = new HandViewImpl(new SelectionCardManager());
         this.handPlayer2 = new HandViewImpl(new SelectionCardManager());
     }
