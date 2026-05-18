@@ -34,11 +34,11 @@ public final class GameState {
             final boolean isP1Turn,
             final List<Card> currentHand,
             final List<Card> discardPile) {
-        this.p1Combinations = p1Combinations;
-        this.p2Combinations = p2Combinations;
+        this.p1Combinations = List.copyOf(p1Combinations);
+        this.p2Combinations = List.copyOf(p2Combinations);
         this.isP1Turn = isP1Turn;
-        this.currentHand = currentHand;
-        this.discardPile = discardPile;
+        this.currentHand = List.copyOf(currentHand);
+        this.discardPile = List.copyOf(discardPile);
     }
 
     /**
