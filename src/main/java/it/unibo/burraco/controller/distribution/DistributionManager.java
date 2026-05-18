@@ -9,6 +9,7 @@ import it.unibo.burraco.model.player.Player;
  * Responsibility includes populating players' hands, creating side pots,
  * and setting up the initial state of the discard pile and deck.
  */
+@SuppressWarnings("PMD.ImplicitFunctionalInterface")
 public interface DistributionManager {
 
     /**
@@ -21,7 +22,6 @@ public interface DistributionManager {
      *                         will be depleted during distribution
      * @param modelDiscardPile the discard pile to be initialized with the first card
      */
-    @SuppressWarnings("PMD.ImplicitFunctionalInterface")
     void distributeInitialCards(Player player1,
                                 Player player2,
                                 Deck deck,
