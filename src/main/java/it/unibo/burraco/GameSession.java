@@ -33,6 +33,14 @@ public final class GameSession {
     private final RoundControllerImpl roundCtrl;
     private final ScoreController scoreController;
 
+    /**
+     * Constructs and initializes a complete GameSession by wiring Model, View, 
+     * and Controller components together.
+     *
+     * @param nameP1      the name of the first player
+     * @param nameP2      the name of the second player
+     * @param targetScore the score threshold required to win the entire game session
+     */
     public GameSession(final String nameP1,
                        final String nameP2,
                        final int targetScore) {
