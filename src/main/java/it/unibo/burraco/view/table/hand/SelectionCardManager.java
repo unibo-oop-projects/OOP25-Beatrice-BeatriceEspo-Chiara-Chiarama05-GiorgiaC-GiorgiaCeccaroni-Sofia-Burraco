@@ -28,9 +28,8 @@ public final class SelectionCardManager {
      *
      * @param card the card to toggle
      */
-    @SuppressWarnings("PMD.CompareObjectsWithEquals")
     public void toggleSelection(final Card card) {
-        final boolean removed = this.selectedCards.removeIf(c -> c == card);
+        final boolean removed = this.selectedCards.removeIf(c -> c.equals(card));
         if (!removed) {
             this.selectedCards.add(card);
         }
@@ -42,9 +41,8 @@ public final class SelectionCardManager {
      * @param card the card to check
      * @return true if the specified card instance is currently in the selection set
      */
-    @SuppressWarnings("PMD.CompareObjectsWithEquals")
     public boolean isSelected(final Card card) {
-        return this.selectedCards.stream().anyMatch(c -> c == card);
+        return this.selectedCards.stream().anyMatch(c -> c.equals(card));
     }
 
     /**

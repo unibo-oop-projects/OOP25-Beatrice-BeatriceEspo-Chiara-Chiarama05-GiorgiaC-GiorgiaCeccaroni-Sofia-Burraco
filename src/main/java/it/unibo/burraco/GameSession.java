@@ -16,7 +16,7 @@ import it.unibo.burraco.model.score.Score;
 import it.unibo.burraco.model.score.ScoreImpl;
 import it.unibo.burraco.view.components.sound.SoundView;
 import it.unibo.burraco.view.components.sound.SoundViewImpl;
-import it.unibo.burraco.view.scenes.ScoreViewImpl;
+import it.unibo.burraco.view.scenes.ScoreViewImpl; 
 import it.unibo.burraco.view.table.BurracoView;
 import it.unibo.burraco.view.table.DistributionView;
 import it.unibo.burraco.view.table.SwingTableAccess;

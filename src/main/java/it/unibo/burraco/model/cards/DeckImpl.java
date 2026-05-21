@@ -48,11 +48,11 @@ public final class DeckImpl implements Deck {
         for (int copy = 0; copy < DECK_COPIES; copy++) {
             for (final Seed seed : STANDARD_SEEDS) {
                 for (final CardValue value : STANDARD_VALUES) {
-                    cards.add(new CardImpl(seed, value));
+                    cards.add(CardFactory.create(seed, value));
                 }
             }
             for (int j = 0; j < JOLLY_PER_DECK; j++) {
-                cards.add(new CardImpl(Seed.JOKER, CardValue.JOLLY));
+                cards.add(CardFactory.create(Seed.JOKER, CardValue.JOLLY));
             }
         }
         Collections.shuffle(cards);
