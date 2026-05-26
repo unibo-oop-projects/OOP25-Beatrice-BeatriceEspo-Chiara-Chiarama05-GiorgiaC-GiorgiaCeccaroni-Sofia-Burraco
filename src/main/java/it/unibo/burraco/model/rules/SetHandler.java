@@ -40,7 +40,7 @@ public class SetHandler {
             return false;
         }
 
-        final long wildcardCount = cards.stream().filter(SetHandler::isWildcard).count();
+        final long wildcardCount = cards.stream().filter(c -> isWildcard(c)).count();
         if (wildcardCount > 1) {
             return false;
         }
@@ -61,7 +61,7 @@ public class SetHandler {
             return false;
         }
 
-        final long wildcards = set.stream().filter(SetHandler::isWildcard).count();
+        final long wildcards = set.stream().filter(c -> isWildcard(c)).count();
 
         if (isWildcard(newCard)) {
             return wildcards < 1;
@@ -80,7 +80,7 @@ public class SetHandler {
      * @param c the card to check
      * @return true if the card is a potential wildcard
      */
-    private static boolean isWildcard(final Card c) {
+    private boolean isWildcard(final Card c) {
         return c.getValue().isPotentialWildcard();
     }
 }

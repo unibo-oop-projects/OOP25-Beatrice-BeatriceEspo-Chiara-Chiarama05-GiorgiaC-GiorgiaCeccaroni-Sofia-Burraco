@@ -173,7 +173,7 @@ public final class GameLoopController implements GameController {
      * @param action the action expressed by the view
      * @return the corresponding Move for the model
      */
-    private static Move toMove(final ViewAction action) {
+    private Move toMove(final ViewAction action) {
         return switch (action.getType()) {
             case DRAW_DECK ->
                 new Move(Move.Type.DRAW_DECK, Collections.emptyList());
@@ -197,7 +197,7 @@ public final class GameLoopController implements GameController {
      * @param status the model-layer status to translate
      * @return the corresponding view-layer {@link MoveError}
      */
-    private static MoveError toMoveError(final MoveResult.Status status) {
+    private MoveError toMoveError(final MoveResult.Status status) {
         return switch (status) {
             case ALREADY_DRAWN -> MoveError.ALREADY_DRAWN;
             case NOT_DRAWN -> MoveError.NOT_DRAWN;
