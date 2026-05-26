@@ -30,7 +30,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("it.unibo.burraco.BurracoApp") // Usa il package completo
+    mainClass.set("it.unibo.burraco.BurracoApp")
 }
 
 tasks.processResources {
@@ -39,14 +39,15 @@ tasks.processResources {
 }
 
 tasks.withType<Test>().configureEach {
-    useJUnitPlatform() // Abilita JUnit 5
+    useJUnitPlatform()
     testLogging {
         events(*(TestLogEvent.entries.toTypedArray())) 
     }
     testLogging.showStandardStreams = true 
 }
 
-tasks.withType<Jar> {
+tasks.shadowJar {
+    archiveClassifier.set("")
     manifest {
         attributes["Main-Class"] = "it.unibo.burraco.BurracoApp"
     }
