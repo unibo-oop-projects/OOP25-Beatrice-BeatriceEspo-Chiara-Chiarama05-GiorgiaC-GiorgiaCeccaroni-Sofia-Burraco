@@ -23,6 +23,8 @@ public final class ScoreImpl implements Score {
     private static final int NO_POT_PENALTY = -100;
     private static final int BURRACO_MIN_CARDS = 7;
 
+    private final CardPoint cardPoint = new CardPoint();
+
     /**
      * Default constructor for ScoreImpl.
      */
@@ -98,7 +100,7 @@ public final class ScoreImpl implements Score {
         }
 
         final List<Integer> ranks = combination.stream()
-                .map(CardPoint::toInt)
+                .map(this.cardPoint::toInt)
                 .sorted()
                 .collect(Collectors.toList());
 
@@ -127,7 +129,7 @@ public final class ScoreImpl implements Score {
     @Override
     public int calculateRemainingHandValue(final Player player) {
         return player.getHand().stream()
-                .mapToInt(CardPoint::getCardPoints)
+                .mapToInt(this.cardPoint::getCardPoints)
                 .sum();
     }
 
@@ -135,7 +137,7 @@ public final class ScoreImpl implements Score {
     public int calculateOnlyCardsOnTable(final Player player) {
         return player.getCombinations().stream()
                 .flatMap(List::stream)
-                .mapToInt(CardPoint::getCardPoints)
+                .mapToInt(this.cardPoint::getCardPoints)
                 .sum();
     }
 

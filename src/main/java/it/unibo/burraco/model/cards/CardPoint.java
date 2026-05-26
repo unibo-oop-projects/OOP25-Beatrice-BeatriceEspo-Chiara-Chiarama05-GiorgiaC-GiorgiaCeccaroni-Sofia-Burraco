@@ -13,12 +13,9 @@ public final class CardPoint {
     private static final int POINTS_LOW_CARDS = 5;
 
     /**
-     * Private constructor to prevent instantiation of a utility class.
-     *
-     * @throws UnsupportedOperationException if called
+     * Public constructor to allow instantiation by scoring and validation controllers.
      */
-    private CardPoint() {
-        throw new UnsupportedOperationException("Utility class");
+    public CardPoint() {
     }
 
     /**
@@ -27,7 +24,7 @@ public final class CardPoint {
      * @param card the card to evaluate
      * @return the points assigned to the card
      */
-    public static int getCardPoints(final Card card) {
+    public int getCardPoints(final Card card) {
         return switch (card.getValue()) {
             case JOLLY -> POINTS_JOLLY;
             case TWO -> POINTS_TWO;
@@ -45,7 +42,7 @@ public final class CardPoint {
      * @return an integer from 1 (Ace) to 13 (King)
      * @throws IllegalArgumentException if the card is a Jolly
      */
-    public static int toInt(final Card card) {
+    public int toInt(final Card card) {
         if (card.getValue().isJolly()) {
             throw new IllegalArgumentException(
                 "Cannot convert JOLLY to int: " + card.getValue());

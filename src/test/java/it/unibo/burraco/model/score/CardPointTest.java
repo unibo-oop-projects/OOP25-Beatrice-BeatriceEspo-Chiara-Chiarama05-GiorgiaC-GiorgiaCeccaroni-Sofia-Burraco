@@ -1,9 +1,9 @@
 package it.unibo.burraco.model.score;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import it.unibo.burraco.model.cards.Card;
@@ -18,24 +18,31 @@ class CardPointTest {
     private static final int ACE_POINTS = 15;
     private static final int HIGH_CARD_POINTS = 10;
     private static final int LOW_CARD_POINTS = 5;
-    private static final int CONSTRUCTOR_COUNT = 1;
+
+    private CardPoint cardPoint;
+
+    @BeforeEach
+    void setUp() {
+        // Inizializza l'istanza prima di ogni singolo test
+        this.cardPoint = new CardPoint();
+    }
 
     @Test
     void testJollyWorth30() {
         final Card jolly = new CardImpl(Seed.JOKER, CardValue.JOLLY);
-        assertEquals(JOLLY_POINTS, CardPoint.getCardPoints(jolly));
+        assertEquals(JOLLY_POINTS, this.cardPoint.getCardPoints(jolly));
     }
 
     @Test
     void testTwoWorth20() {
         final Card two = new CardImpl(Seed.HEARTS, CardValue.TWO);
-        assertEquals(TWO_POINTS, CardPoint.getCardPoints(two));
+        assertEquals(TWO_POINTS, this.cardPoint.getCardPoints(two));
     }
 
     @Test
     void testAceWorth15() {
         final Card ace = new CardImpl(Seed.HEARTS, CardValue.ACE);
-        assertEquals(ACE_POINTS, CardPoint.getCardPoints(ace));
+        assertEquals(ACE_POINTS, this.cardPoint.getCardPoints(ace));
     }
 
     @Test
@@ -46,7 +53,7 @@ class CardPointTest {
         };
         for (final CardValue value : highValues) {
             final Card card = new CardImpl(Seed.HEARTS, value);
-            assertEquals(HIGH_CARD_POINTS, CardPoint.getCardPoints(card), "Expected 10 points for value: " + value);
+            assertEquals(HIGH_CARD_POINTS, this.cardPoint.getCardPoints(card), "Expected 10 points for value: " + value);
         }
     }
 
@@ -57,7 +64,7 @@ class CardPointTest {
         };
         for (final CardValue value : lowValues) {
             final Card card = new CardImpl(Seed.HEARTS, value);
-            assertEquals(LOW_CARD_POINTS, CardPoint.getCardPoints(card), "Expected 5 points for value: " + value);
+            assertEquals(LOW_CARD_POINTS, this.cardPoint.getCardPoints(card), "Expected 5 points for value: " + value);
         }
     }
 
@@ -72,7 +79,7 @@ class CardPointTest {
 
         for (int i = 0; i < values.length; i++) {
             final Card card = new CardImpl(Seed.HEARTS, values[i]);
-            assertEquals(expected[i], CardPoint.toInt(card),
+            assertEquals(expected[i], this.cardPoint.toInt(card),
                 "Rank-to-int mapping failed for value: " + values[i]);
         }
     }
@@ -80,13 +87,6 @@ class CardPointTest {
     @Test
     void testToIntThrowsOnJolly() {
         final Card jolly = new CardImpl(Seed.JOKER, CardValue.JOLLY);
-        assertThrows(IllegalArgumentException.class, () -> CardPoint.toInt(jolly));
-    }
-
-    @Test
-    void testPrivateConstructor() {
-        final var constructors = CardPoint.class.getDeclaredConstructors();
-        assertEquals(CONSTRUCTOR_COUNT, constructors.length);
-        assertFalse(constructors[0].canAccess(null));
+        assertThrows(IllegalArgumentException.class, () -> this.cardPoint.toInt(jolly));
     }
 }
