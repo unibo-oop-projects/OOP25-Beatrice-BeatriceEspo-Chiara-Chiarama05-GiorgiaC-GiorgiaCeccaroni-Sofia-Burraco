@@ -10,7 +10,7 @@ import it.unibo.burraco.model.cards.Card;
  * All raw string comparisons for wildcards have been replaced with
  * {@link it.unibo.burraco.model.cards.CardValue#isPotentialWildcard()}.
  */
-public class SetHandler {
+public final class SetHandler {
 
     /**
      * Constructs a new SetHandler.

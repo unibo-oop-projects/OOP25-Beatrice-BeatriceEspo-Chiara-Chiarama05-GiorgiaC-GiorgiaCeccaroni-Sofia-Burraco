@@ -94,7 +94,7 @@ public final class CombinationValidator {
         if (c.getValue() != CardValue.TWO) {
             return false;
         }
-        if (c instanceof CardImpl && ((CardImpl) c).isUsedAsWildcard()) {
+        if (c.isUsedAsWildcard()) {
             return true;
         }
 
