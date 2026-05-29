@@ -66,3 +66,7 @@ tasks.distTar {
 tasks.startScripts {
     dependsOn(tasks.shadowJar)
 }
+
+tasks.named("startShadowScripts") {
+    dependsOn(tasks.jar)
+}
