@@ -22,7 +22,6 @@ class PlayerTest {
     private static final int SCORE_SECOND = 25;
     private static final int SCORE_TOTAL = 35;
     private static final int SCORE_ROUND = 100;
-    private static final int POT_SIZE = 2;
     private static final int COMBO_SIZE = 2;
 
     private PlayerImpl player;

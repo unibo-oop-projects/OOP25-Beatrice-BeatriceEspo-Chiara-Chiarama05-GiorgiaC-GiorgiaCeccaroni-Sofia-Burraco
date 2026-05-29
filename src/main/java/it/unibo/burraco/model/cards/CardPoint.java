@@ -13,9 +13,10 @@ public final class CardPoint {
     private static final int POINTS_LOW_CARDS = 5;
 
     /**
-     * Public constructor to allow instantiation by scoring and validation controllers.
+     * Default constructor.
      */
     public CardPoint() {
+        // Empty constructor.
     }
 
     /**
