@@ -56,3 +56,13 @@ tasks.shadowJar {
 spotbugs {
     ignoreFailures.set(true)
 }
+
+tasks.distZip {
+    dependsOn(tasks.shadowJar)
+}
+tasks.distTar {
+    dependsOn(tasks.shadowJar)
+}
+tasks.startScripts {
+    dependsOn(tasks.shadowJar)
+}
