@@ -27,11 +27,4 @@ public interface Card {
      * @return the numerical value of the card
      */
     int getNumericalValue();
-
-    /**
-     * Checks if the card is currently being used as a wildcard.
-     *
-     * @return true if the card acts as a wildcard, false otherwise
-     */
-    boolean isUsedAsWildcard();
 }

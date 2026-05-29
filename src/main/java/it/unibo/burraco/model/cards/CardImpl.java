@@ -14,7 +14,6 @@ public final class CardImpl implements Card {
     private final int id;
     private final Seed seed;
     private final CardValue value;
-    private boolean wildcard;
 
     /**
      * Constructs a CardImpl with the specified seed and value.
@@ -26,20 +25,6 @@ public final class CardImpl implements Card {
         this.seed = seed;
         this.value = value;
         this.id = COUNTER.getAndIncrement();
-    }
-
-    /**
-     * Sets the wildcard status of the card.
-     *
-     * @param status true to set the card as a wildcard, false otherwise
-     */
-    public void setAsWildcard(final boolean status) {
-        this.wildcard = status;
-    }
-
-    @Override
-    public boolean isUsedAsWildcard() {
-        return this.wildcard;
     }
 
     @Override

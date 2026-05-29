@@ -67,19 +67,6 @@ class PlayerTest {
     }
 
     @Test
-    void testPotInteraction() {
-        final List<Card> potCards = List.of(this.aceOfHearts, this.kingOfHearts);
-        this.player.addToPot(potCards);
-
-        assertEquals(POT_SIZE, this.player.getPot().size());
-        this.player.drawPot();
-
-        assertTrue(this.player.getPot().isEmpty());
-        assertTrue(this.player.isInPot());
-        assertEquals(POT_SIZE, this.player.getHand().size());
-    }
-
-    @Test
     void testAddCombinationIsDefensiveCopy() {
         final List<Card> comb = new ArrayList<>(List.of(this.aceOfHearts, this.kingOfHearts));
         this.player.addCombination(comb);

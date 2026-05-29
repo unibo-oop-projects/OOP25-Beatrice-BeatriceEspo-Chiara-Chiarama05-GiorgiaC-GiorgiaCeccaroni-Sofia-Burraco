@@ -50,18 +50,6 @@ public final class TurnImpl implements Turn {
         return isPlayer1Turn ? player1 : player2;
     }
 
-    /**
-     * Checks whether the current player meets the minimum conditions to close.
-     * Conditions: player collected the pot and has at least one burraco.
-     * 
-     * @return true if the current player can attempt to close
-     */
-    @Override
-    public boolean canClose() {
-        final Player p = getCurrentPlayer();
-        return p.isInPot() && p.getBurracoCount() >= 1;
-    }
-
     @Override
     public boolean isPlayer1Turn() {
         return this.isPlayer1Turn;

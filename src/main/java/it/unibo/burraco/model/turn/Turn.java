@@ -27,13 +27,6 @@ public interface Turn {
     boolean isPlayer1Turn();
 
     /**
-     * Checks if the current player meets the conditions to close the round.
-     *
-     * @return true if the current player can close, false otherwise.
-     */
-    boolean canClose();
-
-    /**
      * Checks if the game has been marked as finished.
      *
      * @return true if the game is finished, false otherwise.

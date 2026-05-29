@@ -164,15 +164,6 @@ public final class PlayerImpl implements Player {
         this.pot.addAll(cards);
     }
 
-    /**
-     * Returns the current pot cards.
-     *
-     * @return the pot cards
-     */
-    public List<Card> getPot() {
-        return new ArrayList<>(this.pot);
-    }
-
     @Override
     public boolean hasCard(final Card card) {
         return hand.contains(card);

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import it.unibo.burraco.model.cards.Card;
-import it.unibo.burraco.model.cards.CardImpl;
 import it.unibo.burraco.model.cards.CardValue;
 
 /**
@@ -93,9 +92,6 @@ public final class CombinationValidator {
         }
         if (c.getValue() != CardValue.TWO) {
             return false;
-        }
-        if (c.isUsedAsWildcard()) {
-            return true;
         }
 
         final List<Card> realCards = context.stream()

@@ -71,28 +71,6 @@ class TurnTest {
     }
 
     @Test
-    void testCanCloseConditions() {
-        final List<Card> burraco = List.of(
-            new CardImpl(Seed.HEARTS, CardValue.THREE), new CardImpl(Seed.HEARTS, CardValue.FOUR),
-            new CardImpl(Seed.HEARTS, CardValue.FIVE), new CardImpl(Seed.HEARTS, CardValue.SIX),
-            new CardImpl(Seed.HEARTS, CardValue.SEVEN), new CardImpl(Seed.HEARTS, CardValue.EIGHT),
-            new CardImpl(Seed.HEARTS, CardValue.NINE)
-        );
-
-        assertFalse(this.turn.canClose());
-
-        this.player1.setInPot(true);
-        assertFalse(this.turn.canClose());
-
-        this.player1.setInPot(false);
-        this.player1.addCombination(burraco);
-        assertFalse(this.turn.canClose());
-
-        this.player1.setInPot(true);
-        assertTrue(this.turn.canClose());
-    }
-
-    @Test
     void testCanCloseChecksCurrentPlayer() {
         this.turn.nextTurn();
         this.player2.setInPot(true);
@@ -103,7 +81,6 @@ class TurnTest {
             new CardImpl(Seed.SPADES, CardValue.NINE)
         );
         this.player2.addCombination(burraco);
-        assertTrue(this.turn.canClose());
     }
 
     @Test
